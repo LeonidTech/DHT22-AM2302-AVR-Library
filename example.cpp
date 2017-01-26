@@ -32,7 +32,6 @@ int main()
 		check_DHT();	// Read DHT22 data, retrieve values, and display in uart terminal
 		_delay_ms(5000);	// Delay 5sec		
 	}
-	
 	return 0;
 }
 
@@ -50,7 +49,6 @@ void init_MCU()
 	
 	uart_init( UART_BAUD_SELECT(UART_BAUD_RATE,F_CPU) ); // Initialize UART
 	sei(); //enable global interrupts
-	
 	uart_puts("-InitComplete\n");
 }
 
@@ -68,6 +66,5 @@ void check_DHT()
 
 	}
 	else { uart_puts("error"); uart_puts("\r\n"); }												// Print error if dht sensor is not available
-
 	uart_puts("\r\n");																	
 }
